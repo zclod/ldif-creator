@@ -1,1 +1,1 @@
-(import ./release.nix).ldap-profiles.env
+(import ./release.nix).ldif-creator.env

@@ -1,10 +1,14 @@
-{ mkDerivation, base, bytestring, ldif, stdenv }:
+{ mkDerivation, aeson, base, bytestring, ldif, optparse-applicative
+, stdenv, text
+}:
 mkDerivation {
-  pname = "ldap-profiles";
+  pname = "ldif-creator";
   version = "0.1.0.0";
   src = ./.;
   isLibrary = false;
   isExecutable = true;
-  executableHaskellDepends = [ base bytestring ldif ];
+  executableHaskellDepends = [
+    aeson base bytestring ldif optparse-applicative text
+  ];
   license = stdenv.lib.licenses.bsd3;
 }

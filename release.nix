@@ -3,7 +3,7 @@ let config = {
     haskellPackages = pkgs.haskellPackages.override {
       overrides = self: super: rec {
 
-        ldap-profiles = self.callPackage ./default.nix {};
+        ldif-creator = self.callPackage ./default.nix {};
         ldif = self.callPackage ./ldif.nix {};
 
       };
@@ -14,5 +14,5 @@ let config = {
 pkgs = import <nixpkgs> {inherit config;};
 
 in {
-  ldap-profiles = pkgs.haskellPackages.callPackage ./default.nix {};
+  ldif-creator = pkgs.haskellPackages.callPackage ./default.nix {};
 }
